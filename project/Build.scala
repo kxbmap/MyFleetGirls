@@ -83,7 +83,8 @@ object MyFleetGirlsBuild extends Build {
     incOptions := incOptions.value.withNameHashing(true),
     licenses := Seq("MIT License" -> url("http://www.opensource.org/licenses/mit-license.html")),
     homepage := Some(url("https://myfleet.moe")),
-    fork in Test := true
+    fork in Test := true,
+    logBuffered in Test := false
   )
 
   def start = Command.command("start") { state =>
